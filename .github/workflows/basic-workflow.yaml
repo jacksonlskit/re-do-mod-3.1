@@ -1,19 +1,19 @@
 name : Github Actions Basic Workflow
-run-name: ${{ github.author }} is testing the workflow
+run-name: ${{ github.actor }} is testing the workflow
 on: 
   push:
     branches: [ main ]
-  jobs:
-    Explore-github-actions:
-      runs-on: ubuntu-latest
-      steps:
-        - run: echo "Hello, world!"
-        - run: echo "This is my first workflow"
-        - run: echo "I am learning Github Actions"
-        - run: echo "I am excited to learn more about Github Actions"
-        - run: echo "I am going to explore more about Github Actions"
-        - run: echo "I am going to explore more about Github Actions"
-        - name: List files in the repository
-          run: |
-            is ${GITHUB_WORKSPACE}
-        - run: echo "The job status is ${{ job.status }}"
+jobs:
+  Explore-github-actions:
+    runs-on: ubuntu-latest
+    steps:
+      - run: echo "Hello, world!"
+      - run: echo "This is my first workflow"
+      - run: echo "I am learning Github Actions"
+      - run: echo "I am excited to learn more about Github Actions"      
+      - run: echo "I am going to explore more about Github Actions"
+      - run: echo "I am going to explore more about Github Actions"
+      - name: List files in the repository
+        run: |
+          ls ${GITHUB_WORKSPACE}
+      - run: echo "The job status is ${{ job.status }}"
